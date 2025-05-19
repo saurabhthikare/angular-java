@@ -43,6 +43,14 @@ This guide provides step-by-step instructions for setting up and running a Sprin
 - Ensure that you have the appropriate Java and Maven versions compatible with your Spring application.
 - Adjust the file paths and application names as per your project's structure.
 
+- connect the backend to DATABASE
+# cd  /src/main/resources/
+# vim application property       ---{ :MySQL:// rds endpoint: 3306
+                                      : admin
+                                      : admin 123
+
+
+
 Feel free to modify this guide according to your specific requirements.
 
 ## Dockerfile
@@ -70,3 +78,7 @@ EXPOSE 8080
 # Command to run the application
 CMD ["java", "-jar", "target/spring-backend-v1.jar"]
 ```
+
+- build backend image
+- create container
+- to check hit on browser IP:8080 IF the connection  successful      = white page appear
