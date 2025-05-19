@@ -11,20 +11,33 @@ sudo apt update
 sudo apt install mariadb-server
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
-sudo mysql_secure_installation
-sudo mysql -u root -p
+ mysql -h <rds endpoint> -u admin -p 
+
+#sudo mysql_secure_installation
+#sudo mysql -u root -p
 ```
 ```sql
 CREATE DATABASE springbackend;
 GRANT ALL PRIVILEGES ON springbackend.* TO 'username'@'localhost' IDENTIFIED BY 'your_password';
+--------------------------------------or
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
 ```
 
 ### Import Database from SQL File
 ```bash
 sudo mysql -u username -p springbackend < springbackend.sql
+or
+
+sudo mysql -h <rds endpoint> -u admin -p springbackend < springbackend.sql
+
 ```
+
+
 ```bash
-sudo mysql -u root -p
+#sudo mysql -u root -p
 ```
 ```sql
 show databases;
