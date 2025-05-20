@@ -76,3 +76,12 @@ EXPOSE 80
 
 # Start NGINX server when the container starts
 CMD ["nginx", "-g", "daemon off;"]
+
+
+#########################################
+#cd /src/app/services
+#vim worker.services.ts
+           [  in the place of Localhost you have to write your instace IP  any one of them public/privet.
+#after  that build dockerfile
+#create container
+#To chek hit on tne browser  IP:80
